@@ -37,7 +37,7 @@ CONFIG_SCHEMA = cv.Schema({
     cv.Optional(CONF_PRESSURE_OVERSAMPLING, default='4X'): cv.enum(OVERSAMPLING_OPTIONS, upper=True),
     cv.Optional(CONF_HUMIDITY_OVERSAMPLING, default='2X'): cv.enum(OVERSAMPLING_OPTIONS, upper=True),
     cv.Optional(CONF_IIR_FILTER_COEFFICIENT, default=3): cv.int_range(min=0, max=127),
-}).extend(cv.polling_component_schema('60s')).extend(i2c.i2c_device_schema(0x77))
+}).extend(cv.polling_component_schema('60s')).extend(i2c.i2c_device_schema(0x76))
 
 async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
